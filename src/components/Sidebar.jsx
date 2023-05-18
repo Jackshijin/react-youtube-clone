@@ -1,36 +1,44 @@
-import React from "react";
-import { Stack } from "@mui/material";
+/*
+ * @Description: 侧边栏菜单
+ * @Author: shrijin
+ * @Date: 2023-05-17 14:21:55
+ * @LastEditors: shrijin
+ * @LastEditTime: 2023-05-17 15:19:56
+ */
 
-import { categories } from "../utils/constants";
+import React from 'react';
+import { Stack } from '@mui/material';
 
-const Categories = ({ selectedCategory, setSelectedCategory }) => (
+import { categories } from '../utils/constants';
+
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
-    direction="row"
+    direction='row'
     sx={{
-      overflowY: "auto",
-      height: { sx: "auto", md: "95%" },
-      flexDirection: { md: "column" },
+      overflowY: 'auto',
+      height: { sx: 'auto', md: '95%' },
+      flexDirection: { md: 'column' },
     }}
   >
     {categories.map((category) => (
       <button
-        className="category-btn"
+        className='category-btn'
         onClick={() => setSelectedCategory(category.name)}
         style={{
-          background: category.name === selectedCategory && "#FC1503",
-          color: "white",
+          background: category.name === selectedCategory && '#fc1503',
+          color: 'white'
         }}
         key={category.name}
       >
-        <span style={{ color: category.name === selectedCategory ? "white" : "red", marginRight: "15px" }}>
+        <span style={{ color: category.name === selectedCategory ? 'white' : 'red', marginRight: '15px' }}>
           {category.icon}
         </span>
-        <span style={{ opacity: category.name === selectedCategory ? "1" : "0.8" }}>
+        <span style={{ opacity: category.name === selectedCategory ? '1' : '0.8' }}>
           {category.name}
         </span>
       </button>
     ))}
   </Stack>
-);
+)
 
-export default Categories;
+export default Sidebar;

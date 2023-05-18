@@ -1,7 +1,14 @@
+/*
+ * @Description: 
+ * @Author: shrijin
+ * @Date: 2023-05-17 10:48:19
+ * @LastEditors: shrijin
+ * @LastEditTime: 2023-05-18 11:04:42
+ */
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Box } from '@mui/material';
 
-import { ChannelDetail, VideoDetail, SearchFeed, Navbar, Feed } from './components';
+import { ChannelDetail, VideoDetail, Feed, Navbar, SearchFeed } from "./components";
 
 const App = () => (
   <BrowserRouter>
